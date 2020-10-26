@@ -66,10 +66,11 @@ public class Main {
                     int blueVal = (int) (255 - ((blueDist / (float) blueRad) * 256));
 
 //                    System.out.println(redVal);
-                    if (a==x && b ==y) {
-                    	r = redVal;
+                    if ((a==x) && (b==-y)) {
+                    	r = redVal%256;
                     	g = greenVal;
                     	bl = blueVal;
+                    	break;
                     }
                     Color c = new Color(redVal%256, greenVal, blueVal);
 
