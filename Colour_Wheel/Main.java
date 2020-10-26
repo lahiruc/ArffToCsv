@@ -13,12 +13,21 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int rad = 1024;
-        Scanner in = new Scanner(System.in);
-        int x = in.nextInt(); 
-        int y = in.nextInt(); 
         int rcolor = 0;
         int gcolor = 0;
         int bcolor = 0;
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter valence value: ");
+        float valence = in.nextFloat(); 
+        System.out.print("Enter arousal value: ");
+        float arousal = in.nextFloat(); 
+        //re-scale inputs
+        valence = valence*512;
+        arousal = arousal*512;
+        //convert to int
+        int x = Math.round(valence);
+        int y = Math.round(arousal);
+        
         BufferedImage img = new BufferedImage(rad, rad, BufferedImage.TYPE_INT_RGB);
 
         // Center Point (MIDDLE, MIDDLE)
@@ -112,3 +121,4 @@ public class Main {
         return Integer.decode(hex);
     }
 }
+
