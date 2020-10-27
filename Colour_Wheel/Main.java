@@ -22,8 +22,8 @@ public class Main {
         System.out.print("Enter arousal value: ");
         float arousal = in.nextFloat(); 
         //re-scale inputs
-        valence = valence*512;
-        arousal = arousal*512;
+        valence = (float) ((valence + 0.2)*512);
+        arousal = (float) ((arousal + 0.2)*512);
         //convert to int
         int x = Math.round(valence);
         int y = Math.round(arousal);
