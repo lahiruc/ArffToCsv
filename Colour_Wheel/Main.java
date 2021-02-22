@@ -22,12 +22,12 @@ public class Main {
         System.out.print("Enter arousal value: ");
         float arousal = in.nextFloat(); 
         //re-scale inputs
-        if (valence<0.76 && valence>-0.76) {
+        if (valence<0.75 && valence>-0.75) {
         	valence = (float) (valence*512*1.3);
         } else {
         	valence = (float) (valence*512);
         }
-        if (arousal<0.76 && arousal>-0.76) {
+        if (arousal<0.75 && arousal>-0.75) {
         	arousal = (float) (arousal*512*1.3);
         } else {
         	arousal = (float) (arousal*512);
@@ -92,11 +92,8 @@ public class Main {
                     	break;
                     }
                     Color c = new Color(redVal%256, greenVal, blueVal);
-
                     float hsbVals[] = Color.RGBtoHSB(c.getRed(), c.getGreen(), c.getBlue(), null);
-
                     Color highlight = Color.getHSBColor(hsbVals[0], hsbVals[1], 1);
-
                     img.setRGB(i, j, RGBtoHEX(highlight));
                 } else {
                     img.setRGB(i, j, 0x000000);
